@@ -166,9 +166,15 @@ export function FormularioAssinatura({
     : "#";
 
   const labelClass = brand
-    ? "mb-1 block text-sm font-medium text-[#012555]"
+    ? "mb-1 block text-sm font-medium text-white"
     : "mb-1 block text-sm font-medium text-zinc-700";
-  const requiredClass = brand ? "text-[#ba8831]" : "text-red-500";
+  const requiredClass = brand ? "text-[#FF8F00]" : "text-red-500";
+  const helperClass = brand
+    ? "mt-1 text-xs text-white/70"
+    : "mt-1 text-xs text-zinc-500";
+  const consentClass = brand
+    ? "mt-3 text-center text-xs italic text-white"
+    : "mt-3 text-center text-xs italic text-zinc-500";
   const fieldClass = brand
     ? "w-full rounded-lg border border-[#012555]/20 bg-white px-3 py-2.5 text-[#012555] transition focus:border-[#ba8831] focus:outline-none focus:ring-2 focus:ring-[#ba8831]/30 disabled:bg-zinc-50"
     : "w-full rounded-lg border border-zinc-300 px-3 py-2 focus:border-emerald-500 focus:outline-none focus:ring-1 focus:ring-emerald-500";
@@ -227,7 +233,7 @@ export function FormularioAssinatura({
               className={`${fieldClass}${whatsappError ? " border-red-400 focus:border-red-500 focus:ring-red-200" : ""}`}
             />
             {checkingWhatsapp && (
-              <p className="mt-1 text-xs text-zinc-500">Verificando número...</p>
+              <p className={helperClass}>Verificando número...</p>
             )}
             {whatsappError && (
               <p id="aa-whatsapp-error" className="mt-1 text-sm text-red-600">
@@ -279,7 +285,7 @@ export function FormularioAssinatura({
                   </option>
                 ))}
               </select>
-              <p className="mt-1 text-xs text-zinc-500">Selecione sua cidade</p>
+              <p className={helperClass}>Selecione sua cidade</p>
             </div>
           </div>
 
@@ -291,7 +297,7 @@ export function FormularioAssinatura({
             >
               {submitting ? "Enviando..." : "ASSINAR"}
             </button>
-            <p className="mt-3 text-center text-xs italic text-zinc-500">
+            <p className={consentClass}>
               Ao assinar, autorizo os responsáveis por este abaixo-assinado a
               entrarem em contato comigo para enviar informações, atualizações e
               conteúdos relacionados às reivindicações apresentadas.

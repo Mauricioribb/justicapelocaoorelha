@@ -1,139 +1,119 @@
-import Image from "next/image";
 import Link from "next/link";
-import { Footer } from "@/components/Footer";
+import { TarifaZeroPageShell } from "@/components/TarifaZeroPageShell";
 
 export const metadata = {
-  title: "Sobre Nós | Pais pelos filhos na Escola",
+  title: "Sobre Nós | Tarifa Zero Já",
 };
 
-const GARANTIAS = [
-  "A proteção da infância",
-  "O respeito à idade e ao desenvolvimento das crianças",
-  "A transparência sobre conteúdos e abordagens sensíveis",
-  "O direito dos pais de serem informados e ouvidos",
-  "A participação ativa da família na formação dos filhos",
+const PILARES = [
+  {
+    title: "Justiça Social:",
+    text: "Garantir que o transporte público seja um serviço gratuito e universal, financiado de forma solidária.",
+  },
+  {
+    title: "Transparência e Fiscalização:",
+    text: "Criar mecanismos que permitam à sociedade auditar os contratos de transporte e a gestão dos recursos públicos.",
+  },
+  {
+    title: "Mobilidade Sustentável:",
+    text: "Promover o uso do transporte coletivo para reduzir a poluição e melhorar a qualidade de vida nos centros urbanos.",
+  },
+  {
+    title: "Mudança Legislativa:",
+    text: "Apoiar a criação de normas municipais e estaduais que institucionalizem o fundo da Tarifa Zero e assegurem sua viabilidade.",
+  },
 ];
-
-function CheckIcon() {
-  return (
-    <svg
-      className="mt-1 h-5 w-5 shrink-0 text-[#FF7900]"
-      viewBox="0 0 512 512"
-      fill="currentColor"
-      aria-hidden
-    >
-      <path d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z" />
-    </svg>
-  );
-}
 
 export default function SobreNosPage() {
   return (
-    <>
-      <div className="relative min-h-[70vh] overflow-hidden bg-[#0D2A4C] font-[family-name:var(--font-roboto)] text-white">
-        <div className="absolute inset-0 opacity-[0.05]">
-          <Image
-            src="/img/9320666.jpg"
-            alt=""
-            fill
-            priority
-            className="object-cover object-center"
-            sizes="100vw"
-          />
-        </div>
+    <TarifaZeroPageShell>
+      <article className="mt-8 w-full max-w-[800px] overflow-hidden rounded-[10px] bg-white p-6 text-[#54595F] shadow-[0_0_10px_rgba(0,0,0,0.18)] md:mt-10 md:p-10">
+        <div className="space-y-5 text-base leading-relaxed md:text-[15px]">
+          <h1 className="text-xl font-semibold text-[#080301] md:text-2xl">
+            Sobre Nós: Movimento Pelo Projeto de Lei Tarifa Zero Já
+          </h1>
 
-        <div className="relative z-10 mx-auto max-w-[1140px] px-4 py-8 md:py-14">
-          <div className="flex flex-col items-center">
-            <Link href="/" className="transition hover:opacity-90">
-              <Image
-                src="/img/logo-pais-pelos-filhos-naescola.png"
-                alt="Pais pelos filhos na Escola"
-                width={500}
-                height={164}
-                priority
-                className="h-auto w-full max-w-[288px] md:max-w-[420px]"
-              />
+          <p>
+            O{" "}
+            <strong className="font-bold text-[#E46C17]">
+              Movimento pelo Projeto de Lei Tarifa Zero Já
+            </strong>{" "}
+            é uma mobilização cidadã, apartidária e sem fins lucrativos, que
+            nasceu da indignação coletiva diante da exclusão social e das
+            barreiras à mobilidade urbana. Inspirados pela necessidade de um
+            transporte público verdadeiramente acessível, unimos forças para
+            transformar a demanda popular em ação legislativa concreta,
+            garantindo que o direito de ir e vir não dependa da condição
+            financeira do cidadão.
+          </p>
+
+          <p>
+            Acreditamos que o acesso ao transporte é um{" "}
+            <strong className="font-bold text-[#E46C17]">
+              direito fundamental
+            </strong>{" "}
+            e a chave para o exercício da cidadania. Embora o transporte seja um
+            serviço essencial, a realidade atual impõe tarifas abusivas que
+            segregam a população, enquanto os mecanismos de financiamento
+            público carecem de transparência e eficiência social.
+          </p>
+
+          <h2 className="text-lg font-semibold text-[#080301] md:text-xl">
+            Nossa Missão
+          </h2>
+
+          <p>
+            Nossa iniciativa surge da necessidade urgente de democratizar o
+            acesso à cidade, fundamentada em quatro pilares essenciais:
+          </p>
+
+          <ul className="space-y-4">
+            {PILARES.map((item) => (
+              <li key={item.title}>
+                <p>
+                  <strong className="font-bold text-[#E46C17]">
+                    {item.title}
+                  </strong>{" "}
+                  {item.text}
+                </p>
+              </li>
+            ))}
+          </ul>
+
+          <h2 className="text-lg font-semibold text-[#080301] md:text-xl">
+            Como Atuamos
+          </h2>
+
+          <p>
+            Através deste abaixo-assinado, buscamos demonstrar aos nossos
+            representantes no Poder Legislativo que a{" "}
+            <strong className="font-bold text-[#E46C17]">Tarifa Zero</strong> é
+            uma prioridade da população. O engajamento registrado aqui serve como
+            base para o encaminhamento oficial do Projeto de Lei, pressionando
+            vereadores e deputados a agirem em favor de uma cidade sem catracas.
+          </p>
+
+          <p>
+            Nosso compromisso é com a ética, a igualdade e o direito à cidade.
+            Cada assinatura é um basta à exclusão e um passo em direção a um
+            futuro onde o deslocamento seja um direito garantido, e não uma
+            mercadoria.
+          </p>
+
+          <p>
+            <strong className="font-bold text-[#E46C17]">Tarifa Zero Já!</strong>
+          </p>
+
+          <div className="pt-2 text-center">
+            <Link
+              href="/#assinar"
+              className="inline-flex items-center justify-center rounded-xl bg-[#FF7900] px-6 py-3 text-sm font-bold uppercase tracking-wide text-white shadow-md transition hover:bg-[#e56d00]"
+            >
+              Assinar agora
             </Link>
-
-            <article className="mt-8 w-full max-w-[800px] overflow-hidden rounded-2xl border border-gray-400/50 bg-[#132f52] md:mt-10">
-              <header className="border-b border-gray-400/30 px-6 py-6 text-center md:px-10 md:py-8">
-                <p className="text-xs font-bold uppercase tracking-[0.35em] text-[#FF7900]">
-                  Conheça o movimento
-                </p>
-                <h1 className="mt-2 text-3xl font-bold md:text-4xl">Sobre Nós</h1>
-              </header>
-
-              <div className="space-y-5 px-6 py-8 text-base leading-relaxed text-white/90 md:px-10 md:py-10 md:text-lg">
-                <p>
-                  O <strong className="text-white">SOS – PAIS, PROTEJAM SEUS FILHOS NA ESCOLA</strong>{" "}
-                  é uma mobilização cidadã, apartidária e sem fins lucrativos, criada
-                  para fortalecer a participação das famílias nas decisões que envolvem
-                  a educação e o desenvolvimento das crianças dentro do ambiente
-                  escolar.
-                </p>
-
-                <p>
-                  Acreditamos que a educação é um dever compartilhado entre o Estado e
-                  a família, conforme estabelece a Constituição Federal. No entanto,
-                  muitos pais e mães têm sido excluídos de decisões sobre temas
-                  sensíveis apresentados nas escolas, sem aviso prévio, sem
-                  transparência e sem diálogo.
-                </p>
-
-                <div>
-                  <p className="mb-4 font-medium text-white">
-                    Nossa iniciativa nasce da necessidade de reaproximar a família da
-                    escola, garantindo:
-                  </p>
-                  <ul className="space-y-3">
-                    {GARANTIAS.map((item) => (
-                      <li
-                        key={item}
-                        className="flex items-start gap-3 rounded-lg border border-white/5 bg-[#0D2A4C]/50 px-3 py-2.5"
-                      >
-                        <CheckIcon />
-                        <span className="text-sm md:text-base">{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
-                <p>
-                  Por meio deste abaixo-assinado, buscamos apoiar a criação da{" "}
-                  <strong className="text-white">
-                    Lei Municipal de Transparência e do Conselho de Pais
-                  </strong>
-                  , instrumentos que permitem diálogo, fiscalização e cooperação entre
-                  famílias, escolas e poder público.
-                </p>
-
-                <p>
-                  O ranking de cidades existe para demonstrar, de forma transparente,
-                  o engajamento da população local e fortalecer o encaminhamento do
-                  projeto aos vereadores e representantes municipais.
-                </p>
-
-                <p>
-                  Nosso compromisso é com a infância, a família e a educação
-                  responsável, sempre pautados pelo respeito, pela legalidade e pela
-                  construção coletiva.
-                </p>
-
-                <div className="pt-2 text-center">
-                  <Link
-                    href="/#assinar"
-                    className="inline-flex items-center justify-center rounded-xl bg-[#FF7900] px-6 py-3 text-sm font-bold uppercase tracking-wide text-white shadow-md transition hover:bg-[#e56d00]"
-                  >
-                    Assinar agora
-                  </Link>
-                </div>
-              </div>
-            </article>
           </div>
         </div>
-      </div>
-
-      <Footer />
-    </>
+      </article>
+    </TarifaZeroPageShell>
   );
 }

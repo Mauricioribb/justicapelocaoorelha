@@ -28,7 +28,7 @@ export async function generateMetadata(): Promise<Metadata> {
   const siteUrl =
     rawSiteUrl && !rawSiteUrl.includes("localhost")
       ? rawSiteUrl
-      : "https://www.pelasmaesatipicas.com.br";
+      : "https://www.tarifazeroja.com.br";
   return buildSiteMetadata(config, siteUrl);
 }
 

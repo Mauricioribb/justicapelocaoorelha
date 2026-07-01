@@ -226,6 +226,54 @@ body {
   background: #0d2a4c;
 }
 
+.hero-title-animated-border {
+  position: relative;
+  isolation: isolate;
+  display: inline-block;
+  overflow: hidden;
+  border-radius: 0.75rem;
+  padding: 0.08em 0.22em;
+  color: #e46c17;
+}
+
+@media (min-width: 768px) {
+  .hero-title-animated-border {
+    border-radius: 1.25rem;
+    padding: 0.06em 0.18em;
+  }
+}
+
+.hero-title-animated-border::before {
+  content: "";
+  position: absolute;
+  inset: -50%;
+  z-index: -2;
+  background: conic-gradient(
+    from 0deg,
+    #ff7900,
+    #ffa900,
+    #ffffff,
+    #ffa900,
+    #ff7900
+  );
+  animation: cta-border-spin 4s linear infinite;
+}
+
+.hero-title-animated-border::after {
+  content: "";
+  position: absolute;
+  inset: 3px;
+  z-index: -1;
+  border-radius: calc(0.75rem - 3px);
+  background: #000000;
+}
+
+@media (min-width: 768px) {
+  .hero-title-animated-border::after {
+    border-radius: calc(1.25rem - 3px);
+  }
+}
+
 @keyframes cta-border-spin {
   to {
     transform: rotate(360deg);
@@ -241,6 +289,12 @@ body {
   }
 
   .cta-animated-border::before {
+    animation: none;
+    inset: 0;
+    background: linear-gradient(90deg, #ff7900, #ffa900, #ff7900);
+  }
+
+  .hero-title-animated-border::before {
     animation: none;
     inset: 0;
     background: linear-gradient(90deg, #ff7900, #ffa900, #ff7900);

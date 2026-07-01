@@ -49,9 +49,9 @@ export const DEFAULT_CONFIG: AppConfig = {
     titulo:
       "Tarifa Zero JA | Busão 0800 — Mobilização por transporte público gratuito",
     descricao:
-      "Assine o abaixo-assinado pela Tarifa Zero em Juazeiro do Norte. Junte-se à mobilização #Busão0800 e ajude a levar o projeto à Câmara Municipal.",
+      "Apoie o Tarifa Zero Já! Una-se ao movimento cidadão que luta pelo transporte público gratuito e pelo direito à cidade. Assine e faça a diferença!",
     imagem: "/redes.jpg",
-    nome_site: "Tarifa Zero JA",
+    nome_site: "Tarifa Zero Já",
   },
   lightbox_titulo: "Obrigado por apoiar a Tarifa Zero!",
   lightbox_texto:
