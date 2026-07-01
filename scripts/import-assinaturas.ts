@@ -3,16 +3,10 @@ import { assinaturas } from "../src/lib/db/schema";
 import { slugify, validarWhatsapp } from "../src/lib/utils";
 
 const rows = [
-  ["Jane Maira Sabino", "81999481210", "PB", "João Pessoa", "2026-06-22 01:38:52"],
-  ["Maria elivania", "83988400430", "PB", "João Pessoa", "2026-06-21 14:45:13"],
-  ["Cláudio José Rocha guerra", "14997030247", "SP", "Avaré", "2026-06-21 05:23:53"],
-  ["Guto José", "11947553398", "SP", "Carapicuíba", "2026-03-21 23:19:43"],
-  ["MARCOS JOSE ORTEGA", "14998116944", "SP", "Avaré", "2026-02-01 11:56:26"],
-  ["Maria teste", "64996361886", "GO", "Aparecida de Goiânia", "2026-01-30 09:53:43"],
-  ["MAURICIO SILVA teste", "64996365886", "GO", "Aparecida de Goiânia", "2026-01-30 09:44:10"],
-  ["Antontio teste api whatsapp", "64996365896", "SP", "Américo de Campos", "2026-01-30 09:40:11"],
-  ["Antontio teste api whatsapp", "64996365896", "SP", "Américo de Campos", "2026-01-30 09:38:54"],
-  ["Marcelo José Ortega", "14997903115", "SP", "Avaré", "2026-01-17 20:57:23"],
+  ["Joscelio Aguiar Pinheiro", "11985305448", "SP", "Altair", "2026-05-22 21:37:38"],
+  ["Claudio Jose Rocha Guerra", "14997030247", "SP", "Avaré", "2026-04-03 18:08:44"],
+  ["Luiz Cláudio da Costa", "14997188668", "SP", "Avaré", "2026-04-03 18:01:59"],
+  ["Marcelo José Ortega", "14997903115", "SP", "Campinas", "2026-04-03 18:00:06"],
 ] as const;
 
 async function main() {

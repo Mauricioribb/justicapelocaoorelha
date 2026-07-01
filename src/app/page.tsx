@@ -38,14 +38,14 @@ export default async function HomePage({ searchParams }: HomeProps) {
 
         <div className="relative z-10 mx-auto max-w-[1140px] px-4 py-8 md:py-[70px]">
           <div className="flex flex-col items-center">
-            <div className="-mb-4 overflow-visible rounded-full bg-white px-5 py-2 md:-mb-[29px] md:px-[85px] md:py-[51px]">
+            <div className="-mb-4 overflow-visible rounded-full bg-white px-5 py-2 md:-mb-[15px] md:px-[43px] md:py-[12px]">
               <Image
                 src="/img/tarifazero-logo.png"
                 alt="Tarifa Zero Já"
                 width={845}
                 height={277}
                 priority
-                className="h-auto w-full max-w-[213px] origin-center md:max-w-[845px] md:scale-[1.3]"
+                className="h-auto w-full max-w-[213px] origin-center md:max-w-[422px] md:scale-[0.65]"
               />
             </div>
 
