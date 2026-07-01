@@ -47,7 +47,7 @@ export default async function HomePage({ searchParams }: HomeProps) {
               </h2>
             </div>
 
-            <div className="mt-2 flex w-full max-w-[700px] flex-col items-center space-y-8 md:mt-0">
+            <div className="mt-2 flex w-full max-w-[700px] flex-col items-center md:mt-0">
               <section id="assinar" className="w-full">
                 <div
                   id="abaixo-assinado-form"
@@ -61,11 +61,15 @@ export default async function HomePage({ searchParams }: HomeProps) {
                   />
                 </div>
               </section>
-
-              <CaoOrelhaMovementSection />
             </div>
 
-            <CaoOrelhaSignaturesSection />
+            <section className="mt-8 w-full md:mt-10">
+              <CaoOrelhaMovementSection />
+            </section>
+
+            <section className="mt-8 w-full md:mt-10">
+              <CaoOrelhaSignaturesSection />
+            </section>
 
             {mostrarPlacar && (
               <section className="mt-10 w-full md:mt-12">

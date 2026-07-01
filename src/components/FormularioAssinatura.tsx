@@ -179,7 +179,7 @@ export function FormularioAssinatura({
     ? "w-full rounded-lg border border-[#012555]/20 bg-white px-3 py-2.5 text-[#012555] transition focus:border-[#ba8831] focus:outline-none focus:ring-2 focus:ring-[#ba8831]/30 disabled:bg-zinc-50"
     : "w-full rounded-lg border border-zinc-300 px-3 py-2 focus:border-emerald-500 focus:outline-none focus:ring-1 focus:ring-emerald-500";
   const buttonClass = brand
-    ? "inline-flex w-full items-center justify-center gap-1.5 whitespace-nowrap rounded-xl bg-[#FF7900] px-3 py-3.5 text-sm font-bold uppercase leading-tight tracking-tight text-white shadow-md transition hover:bg-[#e56d00] hover:shadow-lg disabled:opacity-60 md:gap-2 md:px-6 md:py-4 md:text-lg md:tracking-wide"
+    ? "inline-flex w-full items-center justify-center gap-1.5 whitespace-nowrap rounded-xl bg-[#db9b6f] px-3 py-3.5 text-sm font-bold uppercase leading-tight tracking-tight text-white shadow-md transition hover:bg-[#c4885e] hover:shadow-lg disabled:opacity-60 md:gap-2 md:px-6 md:py-4 md:text-lg md:tracking-wide"
     : "inline-flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-emerald-700 to-emerald-900 px-6 py-4 text-sm font-bold uppercase tracking-wide text-white shadow-lg transition hover:from-emerald-800 hover:to-emerald-950 disabled:opacity-60 md:text-base";
 
   return (

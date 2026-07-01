@@ -18,9 +18,12 @@ const PEDIDOS = [
   "Mais respeito à vida.",
 ];
 
+const cardClass =
+  "rounded-[10px] border border-white/20 bg-black/25 px-5 py-5 md:px-8 md:py-8";
+
 export function CaoOrelhaMovementSection() {
   return (
-    <div className="w-full space-y-4 text-center">
+    <div className={`w-full space-y-4 text-center ${cardClass}`}>
       <h2 className="text-[17px] font-semibold text-white md:whitespace-nowrap md:text-[28px]">
         MOVIMENTO DE PROTEÇÃO ANIMAL
       </h2>
@@ -45,7 +48,7 @@ export function CaoOrelhaMovementSection() {
 
 export function CaoOrelhaSignaturesSection() {
   return (
-    <div className="mx-auto mt-10 w-full max-w-[800px] rounded-[10px] bg-black/[0.06] px-5 py-5 md:px-8 md:py-8">
+    <div className={`w-full ${cardClass}`}>
       <h2 className="text-center text-[25px] font-semibold text-white md:text-[25px]">
         Estamos reunindo{" "}
         <span className="font-black text-[#db9b6f]">assinaturas</span> para
