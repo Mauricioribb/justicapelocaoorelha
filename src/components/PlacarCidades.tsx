@@ -23,16 +23,16 @@ const NIVEL_5_CTA = "Parabéns para a cidade!";
 
 const labelClass = "mb-1 block text-sm font-medium text-white/80";
 const fieldClass =
-  "h-[42px] w-full rounded-lg border border-white/20 bg-white/95 px-3 text-sm text-[#0D2A4C] transition focus:border-[#FF7900] focus:outline-none focus:ring-2 focus:ring-[#FF7900]/30 disabled:bg-white/60";
+  "h-[42px] w-full rounded-lg border border-white/20 bg-white/95 px-3 text-sm text-black transition focus:border-[#ffa900] focus:outline-none focus:ring-2 focus:ring-[#ffa900]/30 disabled:bg-white/60";
 const filterBtnClass =
-  "flex h-[42px] w-full items-center justify-center rounded-lg border border-white/20 px-4 text-sm font-medium text-white transition hover:border-[#FF7900]/50 hover:bg-[#FF7900]/10";
+  "flex h-[42px] w-full items-center justify-center rounded-lg border border-white/20 bg-black/30 px-4 text-sm font-medium text-white transition hover:border-[#ffa900]/50 hover:bg-[#ffa900]/10";
 const filterBarClass =
   "mb-4 flex items-end gap-1.5 lg:mb-6 lg:grid lg:grid-cols-4 lg:items-end lg:gap-4";
 const filterFieldWrapClass = "min-w-0 basis-[40%] lg:basis-auto";
 const filterIconWrapClass = "min-w-0 shrink-0 basis-[10%] lg:basis-auto";
 const btnSecondaryClass = filterBtnClass;
 const btnPrimaryClass =
-  "inline-block rounded-xl bg-[#FF7900] px-6 py-3 text-sm font-bold uppercase tracking-wide text-white shadow-md transition hover:bg-[#e56d00] hover:shadow-lg";
+  "inline-block rounded-xl bg-[#ffa900] px-6 py-3 text-sm font-bold uppercase tracking-wide text-black shadow-md transition hover:bg-[#e69900] hover:shadow-lg";
 
 const AUTOPLAY_MS = 4500;
 
@@ -216,9 +216,9 @@ function PlacarShell({
   children: React.ReactNode;
 }) {
   return (
-    <div className="overflow-hidden rounded-[10px] border border-gray-400/50 bg-[#0D2A4C]">
-      <div className="relative border-b border-gray-400/30 px-4 py-4 text-center md:px-8 md:py-5">
-        <p className="text-[10px] font-bold uppercase tracking-[0.25em] text-[#FF7900]">
+    <div className="overflow-hidden rounded-[10px] border border-white/20 bg-black/[0.41]">
+      <div className="relative border-b border-white/20 px-4 py-4 text-center md:px-8 md:py-5">
+        <p className="text-[10px] font-bold uppercase tracking-[0.25em] text-[#ffa900]">
           Mobilização nacional
         </p>
         <h2 className="mt-1 text-xl font-bold text-white md:text-2xl">{title}</h2>
@@ -291,12 +291,12 @@ function InstrucoesModal({
 
   return createPortal(
     <div
-      className="fixed inset-0 z-[9999] flex items-center justify-center bg-[#0D2A4C]/80 p-4 backdrop-blur-sm"
+      className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/75 p-4 backdrop-blur-sm"
       onClick={onClose}
       role="presentation"
     >
       <div
-        className="relative max-h-[85vh] w-full max-w-lg overflow-hidden rounded-2xl border border-white/10 bg-[#0D2A4C] shadow-[0_24px_60px_-12px_rgba(0,0,0,0.45)]"
+        className="relative max-h-[85vh] w-full max-w-lg overflow-hidden rounded-2xl border border-white/20 bg-black/[0.85] shadow-[0_24px_60px_-12px_rgba(0,0,0,0.6)]"
         role="dialog"
         aria-modal="true"
         aria-labelledby="instrucoes-modal-title"
@@ -311,7 +311,7 @@ function InstrucoesModal({
           >
             &times;
           </button>
-          <p className="text-[10px] font-bold uppercase tracking-[0.25em] text-[#FF7900]">
+          <p className="text-[10px] font-bold uppercase tracking-[0.25em] text-[#ffa900]">
             Instruções
           </p>
           <h2
@@ -335,11 +335,11 @@ function InstrucoesModal({
 function PlacarCityCard({ item }: { item: PlacarItem }) {
   const [showInstrucoes, setShowInstrucoes] = useState(false);
   const ctaClass =
-    "mt-2 inline-block rounded-lg bg-[#FF7900] px-3 py-1.5 text-xs font-medium text-white transition hover:bg-[#e56d00] md:mt-3 md:px-4 md:py-2 md:text-sm";
+    "mt-2 inline-block rounded-lg bg-[#ffa900] px-3 py-1.5 text-xs font-medium text-black transition hover:bg-[#e69900] md:mt-3 md:px-4 md:py-2 md:text-sm";
 
   return (
-    <div className="h-full rounded-xl border border-white/10 bg-[#132f52] p-3 transition hover:border-[#FF7900]/35 md:p-5">
-      <div className="mb-1 text-2xl font-bold text-[#FF7900] md:mb-2 md:text-3xl">{item.posicao}º</div>
+    <div className="h-full rounded-xl border border-white/20 bg-black/30 p-3 transition hover:border-[#ffa900]/35 md:p-5">
+      <div className="mb-1 text-2xl font-bold text-[#ffa900] md:mb-2 md:text-3xl">{item.posicao}º</div>
       <h3 className="text-sm font-semibold leading-snug text-white md:text-base">
         {item.cidade} - {item.estado}
       </h3>
@@ -402,7 +402,7 @@ function SliderArrow({
       onClick={onClick}
       disabled={disabled}
       aria-label={direction === "prev" ? "Slide anterior" : "Próximo slide"}
-      className={`${positionClasses} flex h-8 w-8 items-center justify-center rounded-full border border-white/20 bg-[#132f52] text-white shadow-md transition hover:border-[#FF7900]/50 hover:bg-[#FF7900]/15 disabled:pointer-events-none disabled:opacity-40 md:h-11 md:w-11`}
+      className={`${positionClasses} flex h-8 w-8 items-center justify-center rounded-full border border-white/20 bg-black/40 text-white shadow-md transition hover:border-[#ffa900]/50 hover:bg-[#ffa900]/15 disabled:pointer-events-none disabled:opacity-40 md:h-11 md:w-11`}
     >
       <svg
         className="h-5 w-5"
@@ -527,8 +527,8 @@ function PlacarSlider({ items }: { items: PlacarItem[] }) {
                 onClick={() => setCurrent(index)}
                 className={`h-2 rounded-full transition-all ${
                   index === current
-                    ? "w-6 bg-[#FF7900]"
-                    : "w-2 bg-white/25 hover:bg-[#FF7900]/50"
+                    ? "w-6 bg-[#ffa900]"
+                    : "w-2 bg-white/25 hover:bg-[#ffa900]/50"
                 }`}
               />
             ))}
@@ -598,7 +598,7 @@ export function PlacarCidades() {
     return (
       <PlacarShell>
         <PlacarFilterBar skeleton />
-        <p className="py-6 text-center text-white/60">Carregando placar...</p>
+        <p className="py-6 text-center text-white/70">Carregando placar...</p>
       </PlacarShell>
     );
   }
@@ -606,7 +606,7 @@ export function PlacarCidades() {
   if (!filtrado && items.length === 0) {
     return (
       <PlacarShell>
-        <div className="rounded-xl border border-white/10 bg-[#132f52] p-8 text-center">
+        <div className="rounded-xl border border-white/20 bg-black/30 p-8 text-center">
           <p className="text-white/90">
             Nenhuma assinatura ainda. Seja o primeiro a assinar!
           </p>
@@ -638,9 +638,9 @@ export function PlacarCidades() {
       />
 
       {loading ? (
-        <p className="py-8 text-center text-white/60">Buscando...</p>
+        <p className="py-8 text-center text-white/70">Buscando...</p>
       ) : items.length === 0 && filtrado ? (
-        <div className="rounded-xl border border-white/10 bg-[#132f52] p-8 text-center">
+        <div className="rounded-xl border border-white/20 bg-black/30 p-8 text-center">
           <p className="text-lg font-semibold text-white">
             {cidadeFiltro
               ? `${cidadeFiltro} ainda não tem assinaturas`
@@ -668,7 +668,7 @@ export function PlacarCidades() {
       )}
 
       {filtrado && items.length > 0 && (
-        <p className="mt-4 text-center text-sm text-white/60">
+        <p className="mt-4 text-center text-sm text-white/70">
           Mostrando {items.length}{" "}
           {items.length === 1 ? "cidade encontrada" : "cidades encontradas"}
           {estadoFiltro && ` em ${ESTADOS[estadoFiltro] ?? estadoFiltro}`}

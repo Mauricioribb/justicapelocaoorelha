@@ -3,10 +3,10 @@ import { assinaturas } from "../src/lib/db/schema";
 import { slugify, validarWhatsapp } from "../src/lib/utils";
 
 const rows = [
-  ["Joscelio Aguiar Pinheiro", "11985305448", "SP", "Altair", "2026-05-22 21:37:38"],
-  ["Claudio Jose Rocha Guerra", "14997030247", "SP", "Avaré", "2026-04-03 18:08:44"],
-  ["Luiz Cláudio da Costa", "14997188668", "SP", "Avaré", "2026-04-03 18:01:59"],
-  ["Marcelo José Ortega", "14997903115", "SP", "Campinas", "2026-04-03 18:00:06"],
+  ["IOLANDA JESUS DA SILVA", "75992079147", "BA", "Serrinha", "2026-06-18 20:59:18"],
+  ["Adryele Silva", "75992330755", "BA", "Serrinha", "2026-06-18 20:49:08"],
+  ["Cássio Boaventura Dos Santos Magalhães", "75992650280", "BA", "Serrinha", "2026-06-18 20:42:55"],
+  ["Claudio Jose Rocha Guerra", "14997030247", "SP", "Avaré", "2026-03-20 01:01:47"],
 ] as const;
 
 async function main() {

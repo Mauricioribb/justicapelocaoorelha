@@ -42,8 +42,11 @@ export function buildSiteMetadata(
       images: [imageUrl],
     },
     icons: {
-      icon: "/favicon.png",
-      apple: "/favicon.png",
+      icon: [
+        { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+        { url: "/favicon-192x192.png", sizes: "192x192", type: "image/png" },
+      ],
+      apple: "/apple-touch-icon.png",
     },
   };
 }

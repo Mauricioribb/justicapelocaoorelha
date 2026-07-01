@@ -298,9 +298,20 @@ export function FormularioAssinatura({
               {submitting ? "Enviando..." : "ASSINAR"}
             </button>
             <p className={consentClass}>
-              Ao assinar, autorizo os responsáveis por este abaixo-assinado a
-              entrarem em contato comigo para enviar informações, atualizações e
-              conteúdos relacionados às reivindicações apresentadas.
+              {brand ? (
+                <>
+                  Ao assinar, você declara apoio ao combate aos maus-tratos
+                  contra animais e autoriza o recebimento de informações sobre
+                  iniciativas e ações relacionadas à proteção animal.
+                </>
+              ) : (
+                <>
+                  Ao assinar, autorizo os responsáveis por este abaixo-assinado
+                  a entrarem em contato comigo para enviar informações,
+                  atualizações e conteúdos relacionados às reivindicações
+                  apresentadas.
+                </>
+              )}
             </p>
           </div>
 

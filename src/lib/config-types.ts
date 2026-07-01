@@ -43,19 +43,17 @@ export interface AppConfig {
 }
 
 export const DEFAULT_CONFIG: AppConfig = {
-  titulo:
-    "TARIFA ZERO JA — Transporte público gratuito para Juazeiro do Norte",
+  titulo: "Justiça pelo Cão Orelha — Proteção animal e punição a maus-tratos",
   seo: {
-    titulo:
-      "Tarifa Zero JA | Busão 0800 — Mobilização por transporte público gratuito",
+    titulo: "Home - Justiça pelo Cão Orelha",
     descricao:
-      "Apoie o Tarifa Zero Já! Una-se ao movimento cidadão que luta pelo transporte público gratuito e pelo direito à cidade. Assine e faça a diferença!",
-    imagem: "/redes.jpg",
-    nome_site: "Tarifa Zero Já",
+      "Assine para apoiar a criação da Lei de Proteção Animal e punição rigorosa para crimes de maus-tratos na sua cidade.",
+    imagem: "/img/logo-caoorelha.png",
+    nome_site: "Justiça pelo Cão Orelha",
   },
-  lightbox_titulo: "Obrigado por apoiar a Tarifa Zero!",
+  lightbox_titulo: "Obrigado por apoiar a Justiça pelo Cão Orelha!",
   lightbox_texto:
-    "Vamos unir forças? Envie para seus amigos e familiares clicando no botão \"Compartilhar no WhatsApp\" e ajude Juazeiro do Norte a ter transporte gratuito!",
+    "Vamos unir forças? Envie para seus amigos e familiares clicando no botão \"Compartilhar no WhatsApp\" e ajude a combater a impunidade contra maus-tratos.",
   meta_geral: 500,
   mostrar_placar: true,
   codigos: {
@@ -66,9 +64,9 @@ export const DEFAULT_CONFIG: AppConfig = {
   niveis: {
     nivel_1: {
       meta: 50,
-      status: "Cidade em mobilização",
-      frase: "As pessoas começaram a se unir. Vamos mostrar força.",
-      cta: "Assine e ajude sua cidade a sair do zero",
+      status: "Começando",
+      frase: "Seja um dos primeiros a assinar nesta cidade!",
+      cta: "Assine agora",
     },
     nivel_2: {
       meta: 100,
@@ -81,22 +79,22 @@ export const DEFAULT_CONFIG: AppConfig = {
       status: "Cidade forte",
       frase:
         "Esta cidade já tem força suficiente para levar o projeto a um vereador.",
-      cta: "Participe da mobilização e ajude a protocolar o projeto",
+      cta: "Participe da Missão da Família e ajude a protocolar o projeto",
       link: "",
     },
     nivel_4: {
       meta: 500,
       status: "Cidade pronta para protocolo",
       frase:
-        "A população falou alto. É hora de levar o Busão 0800 à Câmara Municipal.",
+        "A população falou alto. É hora de levar a proteção animal à Câmara Municipal.",
       cta: "Clique para participar da entrega do projeto",
       link: "",
     },
     nivel_5: {
-      status: "Missão cumprida",
+      status: "Missão cumprida ✅",
       frase:
-        "Esta cidade deu um passo histórico pela mobilidade urbana acessível.",
-      cta: "Parabéns para a cidade!",
+        "Esta cidade deu um passo histórico pela proteção da infância.",
+      cta: "Veja como sua cidade conseguiu",
     },
   },
 };

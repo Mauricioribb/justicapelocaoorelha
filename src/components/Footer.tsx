@@ -22,18 +22,18 @@ function ChevronRightIcon() {
 
 export function Footer() {
   return (
-    <footer className="relative mt-auto bg-gradient-to-b from-[#006BAD] to-[#080301] text-white">
+    <footer className="relative z-10 mt-auto text-white">
       <div className="mx-auto max-w-[1140px] border-t border-white/30 px-4 py-10 text-center">
         <Link
           href="/"
           className="mb-8 inline-block opacity-90 transition hover:opacity-100"
         >
           <Image
-            src="/img/tarifazero-logo-w.png"
-            alt="Tarifa Zero Já — Início"
-            width={410}
-            height={135}
-            className="mx-auto h-auto w-full max-w-[209px] object-contain md:max-w-[410px]"
+            src="/img/logo-caoorelha.png"
+            alt="Justiça pelo Cão Orelha — Início"
+            width={700}
+            height={396}
+            className="mx-auto h-auto w-full max-w-[119px] object-contain md:max-w-[119px]"
           />
         </Link>
 
@@ -52,8 +52,8 @@ export function Footer() {
         </nav>
 
         <p className="text-center text-sm text-white/80">
-          &copy; {new Date().getFullYear()} Tarifa Zero Já. Todos os direitos
-          reservados.
+          &copy; {new Date().getFullYear()} Justiça pelo Cão Orelha. Todos os
+          direitos reservados.
         </p>
         <p className="mt-4 text-center text-xs text-white/70">
           Desenvolvido e Monitorado por{" "}
