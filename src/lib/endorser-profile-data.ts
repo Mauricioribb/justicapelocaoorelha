@@ -11,8 +11,8 @@ export type EndorserProfile = {
 
 export const MARCELO_ORTEGA_PROFILE: EndorserProfile = {
   name: "Dr. Marcelo Ortega",
-  role: "Advogado e defensor do Transporte Público gratuito",
-  movement: "Movimento Tarifa Zero Já",
+  role: "Advogado e defensor da proteção animal",
+  movement: "Movimento Justiça pelo Cão Orelha",
   connectLabel: "Conecte-se com a gente!",
   imageSrc: "/img/marcelo-ortega.jpg",
   imageAlt: "Dr. Marcelo Ortega",

@@ -1,12 +1,14 @@
 import Image from "next/image";
 import { CaoOrelhaPageFrame } from "@/components/CaoOrelhaPageFrame";
 import { FormularioAssinatura } from "@/components/FormularioAssinatura";
+import { EndorserProfileCard } from "@/components/portable/EndorserProfileCard";
 import {
   CaoOrelhaMovementSection,
   CaoOrelhaSignaturesSection,
 } from "@/components/home/CaoOrelhaSections";
 import { PlacarCidades } from "@/components/PlacarCidades";
 import { getAppConfig } from "@/lib/config";
+import { MARCELO_ORTEGA_PROFILE } from "@/lib/endorser-profile-data";
 
 interface HomeProps {
   searchParams: Promise<{
@@ -47,7 +49,7 @@ export default async function HomePage({ searchParams }: HomeProps) {
               </h2>
             </div>
 
-            <div className="mt-2 flex w-full max-w-[700px] flex-col items-center md:mt-0">
+            <div className="mt-2 flex w-full max-w-[700px] flex-col items-center space-y-4 md:mt-0">
               <section id="assinar" className="w-full">
                 <div
                   id="abaixo-assinado-form"
@@ -61,6 +63,7 @@ export default async function HomePage({ searchParams }: HomeProps) {
                   />
                 </div>
               </section>
+              <EndorserProfileCard {...MARCELO_ORTEGA_PROFILE} embedded />
             </div>
 
             <section className="mt-8 w-full md:mt-10">
