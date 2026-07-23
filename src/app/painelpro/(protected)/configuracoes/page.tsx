@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { AppConfig, DEFAULT_CONFIG } from "@/lib/config-types";
+import { AppConfig, BoxWhatsappConfig, DEFAULT_CONFIG } from "@/lib/config-types";
 import {
   AdminAlert,
   AdminCard,
@@ -13,6 +13,7 @@ const TABS = [
   { id: "informacoes", label: "Informações" },
   { id: "lightbox", label: "Lightbox" },
   { id: "whatswave", label: "Api WhatsWave" },
+  { id: "box_whatsapp", label: "Box Whatsapp" },
   { id: "metas", label: "Metas e Níveis" },
   { id: "scripts", label: "Scripts e Analytics" },
   { id: "mais", label: "Mais Configurações" },
@@ -38,6 +39,10 @@ export default function AdminConfiguracoesPage() {
           ...data,
           seo: { ...DEFAULT_CONFIG.seo, ...data.seo },
           codigos: { ...DEFAULT_CONFIG.codigos, ...data.codigos },
+          box_whatsapp: {
+            ...DEFAULT_CONFIG.box_whatsapp,
+            ...data.box_whatsapp,
+          },
         })
       )
       .finally(() => setLoading(false));
@@ -66,6 +71,17 @@ export default function AdminConfiguracoesPage() {
         [key]: { ...config.niveis[key], [field]: value },
       },
     });
+  }
+
+  function updateBoxWhatsapp(updates: Partial<BoxWhatsappConfig>) {
+    setConfig((prev) => ({
+      ...prev,
+      box_whatsapp: {
+        ...DEFAULT_CONFIG.box_whatsapp,
+        ...prev.box_whatsapp,
+        ...updates,
+      },
+    }));
   }
 
   async function handleOgImageUpload(file: File) {
@@ -364,6 +380,125 @@ export default function AdminConfiguracoesPage() {
                 <p className="mt-1 text-xs text-admin-muted">
                   Variáveis: (nomecompleto), (whatsapp), (estado), (cidade),
                   (titulo), (data)
+                </p>
+              </div>
+            </div>
+          </AdminCard>
+        )}
+
+        {activeTab === "box_whatsapp" && (
+          <AdminCard title="Box Whatsapp">
+            <div className="space-y-4">
+              <div className="flex items-center justify-between">
+                <div>
+                  <p className="text-sm font-medium text-admin-text">Ativar</p>
+                  <p className="mt-0.5 text-xs text-admin-muted">
+                    Substitui o formulário de assinatura e oculta o placar na
+                    home.
+                  </p>
+                </div>
+                <button
+                  type="button"
+                  role="switch"
+                  aria-checked={config.box_whatsapp?.ativo ?? false}
+                  onClick={() =>
+                    updateBoxWhatsapp({
+                      ativo: !(config.box_whatsapp?.ativo ?? false),
+                    })
+                  }
+                  className={`relative inline-flex h-6 w-11 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 focus:outline-none ${
+                    (config.box_whatsapp?.ativo ?? false)
+                      ? "bg-admin-primary"
+                      : "bg-admin-border"
+                  }`}
+                >
+                  <span
+                    className={`inline-block h-5 w-5 transform rounded-full bg-white shadow transition duration-200 ${
+                      (config.box_whatsapp?.ativo ?? false)
+                        ? "translate-x-5"
+                        : "translate-x-0"
+                    }`}
+                  />
+                </button>
+              </div>
+
+              <div>
+                <label className="mb-1.5 block text-sm font-medium text-admin-text">
+                  Título
+                </label>
+                <input
+                  type="text"
+                  value={config.box_whatsapp?.titulo ?? ""}
+                  onChange={(e) =>
+                    updateBoxWhatsapp({ titulo: e.target.value })
+                  }
+                  className="admin-input"
+                />
+              </div>
+
+              <div>
+                <label className="mb-1.5 block text-sm font-medium text-admin-text">
+                  Descrição
+                </label>
+                <textarea
+                  rows={4}
+                  value={config.box_whatsapp?.descricao ?? ""}
+                  onChange={(e) =>
+                    updateBoxWhatsapp({ descricao: e.target.value })
+                  }
+                  className="admin-input"
+                />
+                <p className="mt-1 text-xs text-admin-muted">
+                  Aceita HTML básico: <code>&lt;b&gt;texto em negrito&lt;/b&gt;</code>,{" "}
+                  <code>&lt;strong&gt;</code>, <code>&lt;em&gt;</code>,{" "}
+                  <code>&lt;br&gt;</code>.
+                </p>
+              </div>
+
+              <div>
+                <label className="mb-1.5 block text-sm font-medium text-admin-text">
+                  Texto do botão
+                </label>
+                <input
+                  type="text"
+                  value={config.box_whatsapp?.texto_botao ?? ""}
+                  onChange={(e) =>
+                    updateBoxWhatsapp({ texto_botao: e.target.value })
+                  }
+                  className="admin-input"
+                />
+              </div>
+
+              <div>
+                <label className="mb-1.5 block text-sm font-medium text-admin-text">
+                  WhatsApp (com DDD)
+                </label>
+                <input
+                  type="text"
+                  value={config.box_whatsapp?.whatsapp ?? ""}
+                  onChange={(e) =>
+                    updateBoxWhatsapp({ whatsapp: e.target.value })
+                  }
+                  className="admin-input"
+                  placeholder="(11) 99999-9999"
+                />
+              </div>
+
+              <div>
+                <label className="mb-1.5 block text-sm font-medium text-admin-text">
+                  Mensagem do WhatsApp
+                </label>
+                <textarea
+                  rows={4}
+                  value={config.box_whatsapp?.mensagem ?? ""}
+                  onChange={(e) =>
+                    updateBoxWhatsapp({ mensagem: e.target.value })
+                  }
+                  className="admin-input"
+                />
+                <p className="mt-1 text-xs text-admin-muted">
+                  Use <code>(nome_site)</code> para inserir o nome do site
+                  automaticamente.
                 </p>
               </div>
             </div>

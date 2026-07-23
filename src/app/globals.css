@@ -280,6 +280,38 @@ body {
   }
 }
 
+.whatsapp-box-animated-border {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  border-radius: 10px;
+  padding: 3px;
+}
+
+.whatsapp-box-animated-border::before {
+  content: "";
+  position: absolute;
+  inset: -50%;
+  z-index: 0;
+  background: conic-gradient(
+    from 0deg,
+    #ff7900,
+    #ffa900,
+    #ffffff,
+    #25d366,
+    #ffa900,
+    #ff7900
+  );
+  animation: cta-border-spin 4s linear infinite;
+}
+
+.whatsapp-box-inner {
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  border-radius: calc(10px - 3px);
+}
+
 @media (prefers-reduced-motion: reduce) {
   .animate-banner-zoom-out,
   .animate-gold-slide-left,
@@ -295,6 +327,12 @@ body {
   }
 
   .hero-title-animated-border::before {
+    animation: none;
+    inset: 0;
+    background: linear-gradient(90deg, #ff7900, #ffa900, #ff7900);
+  }
+
+  .whatsapp-box-animated-border::before {
     animation: none;
     inset: 0;
     background: linear-gradient(90deg, #ff7900, #ffa900, #ff7900);

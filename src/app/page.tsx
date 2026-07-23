@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { CaoOrelhaPageFrame } from "@/components/CaoOrelhaPageFrame";
 import { FormularioAssinatura } from "@/components/FormularioAssinatura";
+import { WhatsappBox } from "@/components/WhatsappBox";
 import { EndorserProfileCard } from "@/components/portable/EndorserProfileCard";
 import {
   CaoOrelhaMovementSection,
@@ -23,7 +24,9 @@ export default async function HomePage({ searchParams }: HomeProps) {
   const estadoPadrao = params.estado?.toUpperCase() ?? "SP";
   const cidadePadrao = params.cidade ? decodeURIComponent(params.cidade) : "";
   const appConfig = await getAppConfig();
-  const mostrarPlacar = appConfig.mostrar_placar ?? true;
+  const boxWhatsappAtivo = appConfig.box_whatsapp?.ativo ?? false;
+  const mostrarPlacar =
+    (appConfig.mostrar_placar ?? true) && !boxWhatsappAtivo;
 
   return (
     <CaoOrelhaPageFrame>
@@ -51,16 +54,22 @@ export default async function HomePage({ searchParams }: HomeProps) {
 
             <div className="mt-2 flex w-full max-w-[700px] flex-col items-center space-y-4 md:mt-0">
               <section id="assinar" className="w-full">
-                <div
-                  id="abaixo-assinado-form"
-                  className="rounded-[10px] bg-black/[0.41] p-4 md:p-6"
-                >
-                  <FormularioAssinatura
-                    estadoPadrao={estadoPadrao}
-                    cidadePadrao={cidadePadrao}
-                    embedded
-                    brand
-                  />
+                <div id="abaixo-assinado-form" className="w-full">
+                  {boxWhatsappAtivo ? (
+                    <WhatsappBox
+                      box={appConfig.box_whatsapp}
+                      nomeSite={appConfig.seo?.nome_site ?? ""}
+                    />
+                  ) : (
+                    <div className="rounded-[10px] bg-black/[0.41] p-4 md:p-6">
+                      <FormularioAssinatura
+                        estadoPadrao={estadoPadrao}
+                        cidadePadrao={cidadePadrao}
+                        embedded
+                        brand
+                      />
+                    </div>
+                  )}
                 </div>
               </section>
               <EndorserProfileCard {...MARCELO_ORTEGA_PROFILE} embedded />

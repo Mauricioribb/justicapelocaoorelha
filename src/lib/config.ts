@@ -23,6 +23,10 @@ export async function getAppConfig(): Promise<AppConfig> {
       ...stored,
       seo: { ...DEFAULT_CONFIG.seo, ...stored.seo },
       codigos: { ...DEFAULT_CONFIG.codigos, ...stored.codigos },
+      box_whatsapp: {
+        ...DEFAULT_CONFIG.box_whatsapp,
+        ...stored.box_whatsapp,
+      },
       niveis: {
         nivel_1: { ...DEFAULT_CONFIG.niveis.nivel_1, ...stored.niveis?.nivel_1 },
         nivel_2: { ...DEFAULT_CONFIG.niveis.nivel_2, ...stored.niveis?.nivel_2 },

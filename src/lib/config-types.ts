@@ -19,6 +19,15 @@ export interface CodigosCustomizados {
   footer?: string;
 }
 
+export interface BoxWhatsappConfig {
+  ativo: boolean;
+  titulo: string;
+  descricao: string;
+  texto_botao: string;
+  whatsapp: string;
+  mensagem: string;
+}
+
 export interface AppConfig {
   titulo: string;
   seo: SeoConfig;
@@ -39,6 +48,7 @@ export interface AppConfig {
     text?: string;
   };
   mostrar_placar: boolean;
+  box_whatsapp: BoxWhatsappConfig;
   codigos?: CodigosCustomizados;
 }
 
@@ -56,6 +66,16 @@ export const DEFAULT_CONFIG: AppConfig = {
     "Vamos unir forças? Envie para seus amigos e familiares clicando no botão \"Compartilhar no WhatsApp\" e ajude a combater a impunidade contra maus-tratos.",
   meta_geral: 500,
   mostrar_placar: true,
+  box_whatsapp: {
+    ativo: false,
+    titulo: "Fale conosco pelo WhatsApp",
+    descricao:
+      "Entre em contato conosco e saiba como apoiar a <b>Justiça pelo Cão Orelha</b> na sua cidade.",
+    texto_botao: "Chamar no WhatsApp",
+    whatsapp: "",
+    mensagem:
+      "Olá! Obrigado pelo seu interesse em (nome_site). Gostaria de saber mais.",
+  },
   codigos: {
     head: "",
     body: "",
