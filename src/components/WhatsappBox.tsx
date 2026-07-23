@@ -43,27 +43,29 @@ export function WhatsappBox({ box, nomeSite }: WhatsappBoxProps) {
 
   return (
     <div className="w-full overflow-hidden rounded-[10px] border border-[#ffa900]/40 bg-black/[0.41]">
-      <div className="flex items-center gap-3 bg-[#012555] px-4 py-3 md:px-6 md:py-4">
+      <div className="flex items-center justify-center gap-3 bg-[#012555] px-4 py-3 md:px-6 md:py-4">
         <WarningIcon />
         <h2 className="text-lg font-bold text-white md:text-xl">{box.titulo}</h2>
       </div>
 
-      <div className="space-y-4 px-4 py-4 md:px-6 md:py-5">
+      <div className="space-y-4 px-4 py-4 text-center md:px-6 md:py-5">
         <div
           className="text-sm leading-relaxed text-white/90 md:text-base [&_b]:font-bold [&_strong]:font-bold [&_em]:italic"
           dangerouslySetInnerHTML={{ __html: box.descricao }}
         />
 
         {url ? (
-          <a
-            href={url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex w-full items-center justify-center gap-2 rounded-lg bg-[#25D366] px-6 py-3 text-base font-bold text-white transition-colors hover:bg-[#1ebe5d] md:w-auto"
-          >
-            <WhatsappIcon />
-            {box.texto_botao}
-          </a>
+          <div className="flex justify-center">
+            <a
+              href={url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex w-full items-center justify-center gap-2 rounded-lg bg-[#25D366] px-6 py-3 text-base font-bold text-white transition-colors hover:bg-[#1ebe5d] sm:w-auto"
+            >
+              <WhatsappIcon />
+              {box.texto_botao}
+            </a>
+          </div>
         ) : (
           <p className="text-sm font-medium text-red-400">
             WhatsApp não configurado. Informe um número válido com DDD no painel
